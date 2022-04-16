@@ -8,6 +8,8 @@ import Wind from "./Components/Wind";
 import WeatherDescription from "./Components/WeatherDescription";
 import Icon from "./Components/Icon";
 import Joi from "joi";
+import "./App.css";
+import "./Media-Queries.css";
 
 let currentInput;
 let currentUpdate;
@@ -113,29 +115,31 @@ const App = () => {
           </p>
         )}
       </div>
+      <div className="forecastContainer">
+        {weather &&
+          weather.map((item, idx) => {
+            // key should be placed on the parent element (div)
+            return (
+              <div className="main" key={idx}>
+                <div className="weatherContainer">
+                  <div className="weatherCard">
+                    <Day day={item.day} />
+                    <Temp temp={item.main.temp} />
+                    <div className="weatherDetails">
+                      <FeelsLike feelsLike={item.main.feels_like} />
+                      <Humidity humidity={item.main.humidity} />
+                      <Wind wind={item.wind} />
+                    </div>
 
-      {weather &&
-        weather.map((item, idx) => {
-          // key should be placed on the parent element (div)
-          return (
-            <div className="main" key={idx}>
-              <div className="weatherContainer">
-                <div className="weatherCard">
-                  <Day day={item.day} />
-                  <Temp temp={item.main.temp} />
-                  <div className="weatherDetails">
-                    <FeelsLike feelsLike={item.main.feels_like} />
-                    <Humidity humidity={item.main.humidity} />
-                    <Wind wind={item.wind} />
+                    <Icon icon={item.icon} />
+                    <WeatherDescription weatherDescription={item.weather} />
                   </div>
-
-                  <Icon icon={item.icon} />
-                  <WeatherDescription weatherDescription={item.weather} />
                 </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+      </div>
+
       <>
         <div className="weatherTimer">
           {Math.round((lastWeatherDateTime - Date.now() + 10000) / 1000)}

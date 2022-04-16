@@ -1,0 +1,46 @@
+@media screen and (max-width: 1024px) {
+  .weatherContainer {
+    padding: 1rem;
+  }
+
+  .temp {
+    font-size: 3rem;
+  }
+
+  .dayOfWeek {
+    font-size: 1.3rem;
+  }
+  .weatherDescription {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    margin-bottom: 2rem;
+  }
+
+  .forecastContainer {
+    flex-wrap: wrap;
+  }
+
+  .input {
+    margin-top: 1rem;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .forecastContainer {
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+
+  .main {
+    width: 100%;
+  }
+
+  img {
+    width: 50%;
+    margin: 0 auto;
+  }
+}
