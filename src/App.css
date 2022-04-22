@@ -1,3 +1,8 @@
+:root {
+  --font-size-sm: 1rem;
+  --font-size-xs: 0.8rem;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -41,6 +46,10 @@ h1,
 .weatherDescription {
   text-transform: capitalize;
   text-align: center;
+}
+
+.weatherDescription {
+  font-size: var(--font-size-sm);
 }
 
 .input {

@@ -132,7 +132,10 @@ const App = () => {
                     </div>
 
                     <Icon icon={item.icon} />
-                    <WeatherDescription weatherDescription={item.weather} />
+                    <WeatherDescription
+                      weatherDescription={item.weather}
+                      temp={item.main.temp}
+                    />
                   </div>
                 </div>
               </div>
